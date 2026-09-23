@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color palette. Source of truth: brand-direction.md (+ cranberry accent) */
+  --color-pine: #16412f;
+  --color-forest: #0e2e20;
+  --color-gold: #c9a24b;
+  --color-champagne: #e2c787;
+  --color-ivory: #faf7f0;
+  --color-cream: #f2ebdd;
+  --color-ink: #1b1b18;
+  --color-muted: #6b6b63;
+  --color-cranberry: #a23b3b;
+  --color-cranberry-dark: #7c292c;
+  --color-success: #2e7d4f;
+  --color-error: #b3432b;
+
+  /* Typography */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+
+  /* Radius */
+  --radius-card: 20px;
+  --radius-control: 12px;
+
+  /* Shadow */
+  --shadow-soft: 0 20px 40px -20px rgba(27, 27, 24, 0.14);
+  --shadow-lift: 0 12px 30px -12px rgba(27, 27, 24, 0.28);
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 96px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-forest);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 32px;
+    }
+  }
+
+  .section-pad {
+    padding-block: 64px;
+  }
+
+  @media (min-width: 1024px) {
+    .section-pad {
+      padding-block: 120px;
+    }
+  }
+
+  .glass {
+    background-color: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Utility to hide native scrollbar for smooth carousel tracks */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
