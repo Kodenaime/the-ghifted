@@ -33,7 +33,7 @@ const CATEGORIES: CategoryConfig[] = [
     badgeBg: "bg-[#c9a24b] text-[#0e2e20]",
     pillBg: "bg-[#faf7f0]/12 text-[#faf7f0] border border-[#faf7f0]/15",
     btnClass: "bg-[#c9a24b] text-[#0e2e20] hover:bg-[#e2c787]",
-    imageSrc: "/assets/images/beauty-fit.jpg",
+    imageSrc: "/assets/images/beauty.webp",
     imageAlt: "Editorial beauty and skincare products collaboration",
     showcaseLabel: "Beauty & Skincare Campaign",
   },
@@ -41,13 +41,13 @@ const CATEGORIES: CategoryConfig[] = [
     name: "Fashion",
     tagline:
       "Elevated seasonal styling, on-body lookbooks, and authentic creator reviews that turn your garments, footwear, and accessories into must-have wardrobe staples.",
-    bg: "bg-[#c9a24b]",
-    textColor: "text-[#0e2e20]",
-    subTextColor: "text-[#0e2e20]/80",
-    badgeBg: "bg-[#0e2e20] text-[#faf7f0]",
-    pillBg: "bg-[#0e2e20]/10 text-[#0e2e20] border border-[#0e2e20]/10",
-    btnClass: "bg-[#0e2e20] text-[#faf7f0] hover:bg-[#16412f]",
-    imageSrc: "/assets/images/fashion-fit.jpg",
+    bg: "bg-[#8a6b2f]",
+    textColor: "text-[#faf7f0]",
+    subTextColor: "text-[#faf7f0]/80",
+    badgeBg: "bg-[#faf7f0] text-[#8a6b2f]",
+    pillBg: "bg-[#faf7f0]/12 text-[#faf7f0] border border-[#faf7f0]/15",
+    btnClass: "bg-[#c9a24b] text-[#0e2e20] hover:bg-[#e2c787]",
+    imageSrc: "/assets/images/fashion.webp",
     imageAlt: "Editorial fashion styling lookbook collaboration",
     showcaseLabel: "Fashion & Lookbook Campaign",
   },
@@ -61,7 +61,7 @@ const CATEGORIES: CategoryConfig[] = [
     badgeBg: "bg-[#faf7f0] text-[#7c292c]",
     pillBg: "bg-[#faf7f0]/12 text-[#faf7f0] border border-[#faf7f0]/15",
     btnClass: "bg-[#faf7f0] text-[#7c292c] hover:bg-[#f2ebdd]",
-    imageSrc: "/assets/images/lifestyle-fit.jpg",
+    imageSrc: "/assets/images/lifestyle.webp",
     imageAlt: "Boutique hospitality and lifestyle dining collaboration",
     showcaseLabel: "Lifestyle & Hospitality Feature",
   },
@@ -150,7 +150,7 @@ export function FitSection() {
     <section
       ref={pinSectionRef}
       id="fit"
-      className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-ivory py-4 sm:py-6 md:py-12"
+      className="relative flex min-h-dvh flex-col justify-center overflow-hidden bg-ivory py-4 sm:py-6 md:py-12"
       aria-label="Is your brand a fit?"
     >
       <div className="container-x w-full">
@@ -193,7 +193,7 @@ export function FitSection() {
         {/* Stacked Cards Frame (Responsive height for mobile viewports) */}
         <div
           ref={cardsContainerRef}
-          className="relative mx-auto grid h-[520px] sm:h-[550px] md:h-[580px] lg:h-[540px] w-full max-w-5xl"
+          className="relative mx-auto grid h-130 sm:h-137.5 md:h-145 lg:h-[135] w-full max-w-5xl"
         >
           {CATEGORIES.map((cat) => {
             const categoryItems =
@@ -202,9 +202,7 @@ export function FitSection() {
             return (
               <div
                 key={cat.name}
-                className={`stacked-card col-start-1 row-start-1 h-full w-full overflow-hidden rounded-[24px] sm:rounded-[32px] p-5 sm:p-7 md:p-9 lg:p-10 shadow-lift ${
-                  cat.bg
-                } ${cat.textColor}`}
+                className={`stacked-card col-start-1 row-start-1 h-full w-full overflow-hidden rounded-3xl sm:rounded-4xl p-5 sm:p-7 md:p-9 lg:p-10 shadow-lift ${cat.bg} ${cat.textColor}`}
               >
                 <div className="grid h-full gap-4 sm:gap-6 lg:grid-cols-12 lg:gap-10 lg:items-center">
                   {/* Left Column: Category Content */}
@@ -274,7 +272,7 @@ export function FitSection() {
 
                   {/* Right Column / Mobile Top: Editorial Photography Showcase */}
                   <div className="relative h-36 sm:h-48 md:h-60 lg:h-full order-1 lg:order-2 lg:col-span-5">
-                    <div className="relative h-full w-full overflow-hidden rounded-[18px] sm:rounded-[24px] shadow-lift">
+                    <div className="relative h-full w-full overflow-hidden rounded-[18px] sm:rounded-3xl shadow-lift">
                       <img
                         src={cat.imageSrc}
                         alt={cat.imageAlt}
@@ -282,12 +280,12 @@ export function FitSection() {
                         className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
                       />
                       {/* Gradient overlay for contrast */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent" />
 
                       {/* Clean label on photography */}
                       <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 text-white">
                         <div className="flex items-center gap-1.5 sm:gap-2">
-                          <SparkleIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#e2c787]" />
+                          <SparkleIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-champaigne" />
                           <p className="text-xs sm:text-sm font-medium tracking-wide">
                             {cat.showcaseLabel}
                           </p>

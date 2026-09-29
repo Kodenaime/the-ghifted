@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
-import { BRAND, HERO, NAV_LINKS } from "../lib/content"
+import { BRAND, HERO, LINKS, NAV_LINKS } from "../lib/content"
 import { trackCta } from "../lib/analytics"
 import { scrollToTarget } from "../lib/smoothScroll"
 import { useWaitlist } from "../lib/waitlist-context"
@@ -84,6 +84,14 @@ export function Nav() {
                 {link.label}
               </a>
             ))}
+            <a
+              href={LINKS.portfolio}
+              target="_blank"
+              rel="noreferrer"
+              className={`text-sm font-medium transition-colors ${linkClass}`}
+            >
+              Portfolio
+            </a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -143,6 +151,15 @@ export function Nav() {
                   {link.label}
                 </a>
               ))}
+              <a
+                href={LINKS.portfolio}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="rounded-[12px] px-4 py-3 text-base font-medium text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              >
+                Portfolio
+              </a>
               <button
                 type="button"
                 onClick={openCta}

@@ -1,6 +1,6 @@
 import { BRAND, LINKS, NAV_LINKS } from "../lib/content"
 import { scrollToTarget } from "../lib/smoothScroll"
-import { InstagramIcon, SparkleIcon, TikTokIcon } from "./icons"
+import { ArrowRight, InstagramIcon, SparkleIcon, TikTokIcon } from "./icons"
 
 const SOCIALS = [
   { label: "Instagram", href: LINKS.instagram, Icon: InstagramIcon },
@@ -26,8 +26,7 @@ export function Footer() {
             {BRAND.wordmark}
           </a>
           <p className="mt-3 max-w-xs text-sm text-ivory/60">
-            A limited-slot creator collaboration for beauty, fashion, and
-            lifestyle brands.
+            <a href={LINKS.portfolio} className="text-ivory transition-colors hover:text-gold flex items-center gap-2">See our work <ArrowRight className="h-4 w-4" /></a>
           </p>
           <div className="mt-5 flex items-center gap-3">
             {SOCIALS.map(({ label, href, Icon }) => (

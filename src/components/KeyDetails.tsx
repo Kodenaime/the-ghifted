@@ -1,7 +1,7 @@
-import { KEY_DETAILS } from "../lib/content"
+import { KEY_DETAILS, LINKS } from "../lib/content"
 import { Reveal } from "./Reveal"
 import { SectionHeading } from "./SectionHeading"
-import { SparkleIcon } from "./icons"
+import { ArrowRight, SparkleIcon } from "./icons"
 
 export function KeyDetails() {
   return (
@@ -19,6 +19,18 @@ export function KeyDetails() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="mt-7 text-center">
+            <a
+              href={LINKS.terms}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-pine underline-offset-4 hover:underline"
+            >
+              View the full campaign terms and conditions
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </Reveal>
       </div>

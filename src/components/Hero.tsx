@@ -18,49 +18,31 @@ export function Hero() {
         <div className="relative h-96 lg:h-auto">
           <img
             src="/assets/images/IMG_6789.webp"
-            alt="The Ghifted Creator collaboration"
+            alt="The Ghifted creator collaboration"
             className="absolute inset-0 h-full w-full object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-pine via-pine/30 to-transparent lg:hidden" />
-          <div className="absolute inset-0 hidden bg-gradient-to-r from-transparent via-pine/30 to-pine lg:block" />
+          <div className="absolute inset-0 bg-linear-to-t from-pine via-pine/30 to-transparent lg:hidden" />
+          <div className="absolute inset-0 hidden bg-linear-to-r from-transparent via-pine/30 to-pine lg:block" />
         </div>
 
-        {/* Right Column: Editorial Typography & Animated Lettering */}
-        <div className="relative flex flex-col justify-center px-6 py-20 sm:px-12 lg:px-16 lg:py-28 xl:px-20">
-          {/* Eyebrow */}
-          <motion.div
-            initial={reduced ? undefined : { opacity: 0, y: 16 }}
-            animate={reduced ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="eyebrow mb-6 text-sm"
-          >
-            <SparkleIcon className="h-4 w-4" />
-            {HERO.eyebrow}
-          </motion.div>
-
-          {/* Grand Letter-by-Letter Animated Headline */}
-          <h1 className="font-display text-[64px] font-medium leading-[0.88] tracking-tight sm:text-[88px] md:text-[104px] lg:text-[116px] xl:text-[124px]">
+        {/* Right Column: Brand title + campaign copy */}
+        <div className="relative flex flex-col justify-center px-6 py-16 sm:px-12 lg:px-16 lg:py-24 xl:px-20">
+          <h1 className="font-display text-[42px] font-medium leading-[0.9] tracking-tight text-white sm:text-[52px] lg:text-[60px]">
             <span className="sr-only">{HERO.title}</span>
             <span aria-hidden="true" className="inline-flex flex-wrap">
               {titleLetters.map((char, i) => (
                 <span key={i} className="inline-block overflow-hidden align-bottom">
                   <motion.span
                     className={`inline-block will-change-transform ${
-                      char === " " ? "w-3 sm:w-5 md:w-6" : ""
+                      char === " " ? "w-2 sm:w-3" : ""
                     }`}
                     initial={
-                      reduced
-                        ? undefined
-                        : { y: "115%", rotateZ: 4, opacity: 0 }
+                      reduced ? undefined : { y: "115%", opacity: 0 }
                     }
-                    animate={
-                      reduced
-                        ? undefined
-                        : { y: "0%", rotateZ: 0, opacity: 1 }
-                    }
+                    animate={reduced ? undefined : { y: "0%", opacity: 1 }}
                     transition={{
-                      duration: 0.8,
-                      delay: 0.15 + i * 0.045,
+                      duration: 0.7,
+                      delay: 0.1 + i * 0.04,
                       ease: [0.22, 1, 0.36, 1],
                     }}
                   >
@@ -71,40 +53,55 @@ export function Hero() {
             </span>
           </h1>
 
-          {/* Subtitle */}
+          <motion.p
+            initial={reduced ? undefined : { opacity: 0, y: 16 }}
+            animate={reduced ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="eyebrow mt-6"
+          >
+            <SparkleIcon className="h-4 w-4" />
+            {HERO.eyebrow}
+          </motion.p>
+
+          <h2 className="mt-3 font-display text-[20px] font-medium leading-tight text-ivory md:text-[30px]">
+            {HERO.headline.map((segment, i) => (
+              <span key={i}>
+                {segment.text}
+                {segment.highlight && (
+                  <span className="text-gold">{segment.highlight}</span>
+                )}
+              </span>
+            ))}
+          </h2>
+
           <motion.p
             initial={reduced ? undefined : { opacity: 0, y: 20 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 max-w-xl text-lg text-ivory/85 sm:text-xl leading-relaxed"
+            transition={{ duration: 0.7, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-5 max-w-xl text-base text-ivory/80 md:text-lg"
           >
-            {HERO.subtitle}
+            {HERO.subcopy}
           </motion.p>
 
-          {/* Key campaign badges filling up space */}
-          <motion.div
-            initial={reduced ? undefined : { opacity: 0, y: 20 }}
-            animate={reduced ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 flex flex-wrap items-center gap-2.5 text-xs sm:text-sm"
-          >
-            <span className="rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-champagne backdrop-blur-sm">
-              Instagram + TikTok Co-Post
-            </span>
-            <span className="rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-champagne backdrop-blur-sm">
-              3 Months Paid Ad Rights
-            </span>
-            <span className="rounded-full border border-gold/40 bg-gold/20 px-4 py-1.5 font-semibold text-gold backdrop-blur-sm">
-              ₦100,000 Special Rate
-            </span>
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
+          <motion.ul
             initial={reduced ? undefined : { opacity: 0, y: 20 }}
             animate={reduced ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10"
+            className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-x-6"
+          >
+            {HERO.bullets.map((item) => (
+              <li key={item} className="flex items-center gap-2.5 text-sm text-ivory/90">
+                <SparkleIcon className="h-3.5 w-3.5 shrink-0 text-gold" />
+                {item}
+              </li>
+            ))}
+          </motion.ul>
+
+          <motion.div
+            initial={reduced ? undefined : { opacity: 0, y: 20 }}
+            animate={reduced ? undefined : { opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-9"
           >
             <Magnetic>
               <button
@@ -113,7 +110,7 @@ export function Hero() {
                   trackCta("hero")
                   open()
                 }}
-                className="group inline-flex cursor-pointer items-center gap-3 rounded-[14px] bg-gold px-8 py-4 text-base font-semibold text-forest shadow-lift transition-all duration-300 hover:bg-champagne hover:scale-105 active:scale-98"
+                className="group inline-flex cursor-pointer items-center gap-3 rounded-[14px] bg-gold px-8 py-4 text-base font-semibold text-forest shadow-lift transition-colors duration-300 hover:bg-champagne"
               >
                 {HERO.cta}
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />

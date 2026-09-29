@@ -5,8 +5,8 @@
 
 export const LINKS = {
   googleForm: "https://forms.gle/rAXpVnCta4iVyYSd6",
-  // TODO: replace with the terms document URL when available.
-  terms: "#",
+  terms:
+    "https://docs.google.com/document/d/1pg5yKx0CMQiTDz2IfpayBB4r_FKwMwkcNSS1LtdRJVI/edit?usp=sharing",
   portfolio: "https://theghifted.my.canva.site/portfolio-and-media-kit/",
   instagram: "https://www.instagram.com/theghifted",
   tiktok: "https://www.tiktok.com/@theghifted",
@@ -26,11 +26,20 @@ export const NAV_LINKS = [
 ]
 
 export const HERO = {
-  eyebrow: "Special Holiday Collaboration",
   title: "The Ghifted",
-  subtitle:
-    "A limited-slot creator collaboration for beauty, fashion, and lifestyle brands.",
-  cta: "Join the waitlist",
+  eyebrow: "Special Holiday Collaboration",
+  headline: [
+    { text: "Your brand deserves a little extra creativity this holiday season without the content creation headache." },
+  ] as { text: string; highlight?: boolean }[],
+  subcopy:
+    "A limited-slot creator collaboration for beauty, fashion, and lifestyle brands ready to show up differently this holiday season.",
+  bullets: [
+    "One video",
+    "Instagram + TikTok posting",
+    "3 months paid ad usage rights",
+    "Special holiday rate",
+  ],
+  cta: "Join the Waitlist",
 }
 
 export type FitCategory = {
@@ -113,7 +122,7 @@ export const INCLUDED = {
       highlight: true,
     },
   ],
-  cta: "Join the waitlist",
+  cta: "Join the Waitlist",
 }
 
 export const PAST_COLLABORATIONS = {
@@ -123,13 +132,13 @@ export const PAST_COLLABORATIONS = {
   videos: [
     {
       src: "/assets/videos/lip-routine.mp4",
-      brand: "Lip Routine",
-      category: "Beauty & Lipcare",
+      brand: "Cassmetics",
+      category: "Lipcare",
     },
     {
       src: "/assets/videos/darling-nigeria-x-the-ghifted.mp4",
       brand: "Darling Nigeria",
-      category: "Haircare & Wigs",
+      category: "Hair extensions",
     },
     {
       src: "/assets/videos/biocos-nigeria-x-the-ghifted.mp4",
@@ -144,7 +153,7 @@ export const PAST_COLLABORATIONS = {
     {
       src: "/assets/videos/softcollections-x-the-ghifted.mp4",
       brand: "Soft Collections",
-      category: "Boutique & Fashion",
+      category: "Skincare",
     },
   ],
 }
@@ -251,5 +260,5 @@ export const FINAL_CTA = {
   title: "Ready to collaborate?",
   body: "Let's create something special this holiday season.",
   note: "Limited slots are available at the special holiday rate.",
-  cta: "Join the waitlist",
+  cta: "Join the Waitlist",
 }
