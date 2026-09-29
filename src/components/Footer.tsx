@@ -1,6 +1,6 @@
 import { BRAND, LINKS, NAV_LINKS } from "../lib/content"
 import { scrollToTarget } from "../lib/smoothScroll"
-import { ArrowRight, InstagramIcon, SparkleIcon, TikTokIcon } from "./icons"
+import { InstagramIcon, SparkleIcon, TikTokIcon } from "./icons"
 
 const SOCIALS = [
   { label: "Instagram", href: LINKS.instagram, Icon: InstagramIcon },
@@ -18,16 +18,13 @@ export function Footer() {
             href="#top"
             onClick={(e) => {
               e.preventDefault()
-              scrollToTarget(0)
+              scrollToTarget(0 )
             }}
             className="inline-flex items-center gap-2 font-display text-xl tracking-tight"
           >
             <SparkleIcon className="h-4 w-4 text-gold" />
             {BRAND.wordmark}
           </a>
-          <p className="mt-3 max-w-xs text-sm text-ivory/60">
-            <a href={LINKS.portfolio} className="text-ivory transition-colors hover:text-gold flex items-center gap-2">See our work <ArrowRight className="h-4 w-4" /></a>
-          </p>
           <div className="mt-5 flex items-center gap-3">
             {SOCIALS.map(({ label, href, Icon }) => (
               <a

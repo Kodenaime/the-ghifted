@@ -223,19 +223,13 @@ export function FitSection() {
                         {cat.name}
                       </h3>
 
-                      <p
-                        className={`mt-1.5 sm:mt-2.5 text-xs sm:text-sm md:text-[15px] leading-relaxed line-clamp-2 sm:line-clamp-3 lg:line-clamp-none ${cat.subTextColor}`}
-                      >
-                        {cat.tagline}
-                      </p>
-
                       {/* Eligible Items Chips */}
                       <div className="mt-3 sm:mt-5">
                         <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.12em] opacity-80">
                           Eligible Niches
                         </p>
                         <ul className="mt-1.5 sm:mt-2 flex flex-wrap gap-1 sm:gap-1.5">
-                          {categoryItems.slice(0, 7).map((item) => (
+                          {categoryItems.map((item) => (
                             <li
                               key={item}
                               className={`rounded-full px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-medium backdrop-blur-sm ${cat.pillBg}`}
@@ -243,13 +237,6 @@ export function FitSection() {
                               {item}
                             </li>
                           ))}
-                          {categoryItems.length > 7 && (
-                            <li
-                              className={`rounded-full px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-medium backdrop-blur-sm opacity-80 ${cat.pillBg}`}
-                            >
-                              +{categoryItems.length - 7} more
-                            </li>
-                          )}
                         </ul>
                       </div>
                     </div>
@@ -271,13 +258,13 @@ export function FitSection() {
                   </div>
 
                   {/* Right Column / Mobile Top: Editorial Photography Showcase */}
-                  <div className="relative h-36 sm:h-48 md:h-60 lg:h-full order-1 lg:order-2 lg:col-span-5">
+                  <div className="relative h-48 sm:h-56 md:h-64 lg:h-full order-1 lg:order-2 lg:col-span-5">
                     <div className="relative h-full w-full overflow-hidden rounded-[18px] sm:rounded-3xl shadow-lift">
                       <img
                         src={cat.imageSrc}
                         alt={cat.imageAlt}
                         loading="lazy"
-                        className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                        className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
                       />
                       {/* Gradient overlay for contrast */}
                       <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent" />
@@ -285,7 +272,7 @@ export function FitSection() {
                       {/* Clean label on photography */}
                       <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 text-white">
                         <div className="flex items-center gap-1.5 sm:gap-2">
-                          <SparkleIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-champaigne" />
+                          <SparkleIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-champagne" />
                           <p className="text-xs sm:text-sm font-medium tracking-wide">
                             {cat.showcaseLabel}
                           </p>
