@@ -33,7 +33,7 @@ const CATEGORIES: CategoryConfig[] = [
     badgeBg: "bg-[#c9a24b] text-[#0e2e20]",
     pillBg: "bg-[#faf7f0]/12 text-[#faf7f0] border border-[#faf7f0]/15",
     btnClass: "bg-[#c9a24b] text-[#0e2e20] hover:bg-[#e2c787]",
-    imageSrc: "/assets/images/beauty.webp",
+    imageSrc: "/assets/images/beauty.jpg",
     imageAlt: "Editorial beauty and skincare products collaboration",
     showcaseLabel: "Beauty & Skincare Campaign",
   },
@@ -47,7 +47,7 @@ const CATEGORIES: CategoryConfig[] = [
     badgeBg: "bg-[#faf7f0] text-[#8a6b2f]",
     pillBg: "bg-[#faf7f0]/12 text-[#faf7f0] border border-[#faf7f0]/15",
     btnClass: "bg-[#c9a24b] text-[#0e2e20] hover:bg-[#e2c787]",
-    imageSrc: "/assets/images/fashion.webp",
+    imageSrc: "/assets/images/fashion.jpg",
     imageAlt: "Editorial fashion styling lookbook collaboration",
     showcaseLabel: "Fashion & Lookbook Campaign",
   },
@@ -61,7 +61,7 @@ const CATEGORIES: CategoryConfig[] = [
     badgeBg: "bg-[#faf7f0] text-[#7c292c]",
     pillBg: "bg-[#faf7f0]/12 text-[#faf7f0] border border-[#faf7f0]/15",
     btnClass: "bg-[#faf7f0] text-[#7c292c] hover:bg-[#f2ebdd]",
-    imageSrc: "/assets/images/lifestyle.webp",
+    imageSrc: "/assets/images/lifestyle.jpg",
     imageAlt: "Boutique hospitality and lifestyle dining collaboration",
     showcaseLabel: "Lifestyle & Hospitality Feature",
   },
@@ -193,7 +193,7 @@ export function FitSection() {
         {/* Stacked Cards Frame (Responsive height for mobile viewports) */}
         <div
           ref={cardsContainerRef}
-          className="relative mx-auto grid h-130 sm:h-137.5 md:h-145 lg:h-[135] w-full max-w-5xl"
+          className="relative mx-auto grid h-140 sm:h-137.5 md:h-145 lg:h-[135] w-full max-w-5xl"
         >
           {CATEGORIES.map((cat) => {
             const categoryItems =
@@ -258,7 +258,7 @@ export function FitSection() {
                   </div>
 
                   {/* Right Column / Mobile Top: Editorial Photography Showcase */}
-                  <div className="relative h-48 sm:h-56 md:h-64 lg:h-full order-1 lg:order-2 lg:col-span-5">
+                  <div className="relative h-64 sm:h-56 md:h-64 lg:h-full order-1 lg:order-2 lg:col-span-5">
                     <div className="relative h-full w-full overflow-hidden rounded-[18px] sm:rounded-3xl shadow-lift">
                       <img
                         src={cat.imageSrc}
@@ -266,21 +266,6 @@ export function FitSection() {
                         loading="lazy"
                         className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105"
                       />
-                      {/* Gradient overlay for contrast */}
-                      <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent" />
-
-                      {/* Clean label on photography */}
-                      <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 text-white">
-                        <div className="flex items-center gap-1.5 sm:gap-2">
-                          <SparkleIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-champagne" />
-                          <p className="text-xs sm:text-sm font-medium tracking-wide">
-                            {cat.showcaseLabel}
-                          </p>
-                        </div>
-                        <p className="mt-0.5 text-[10px] sm:text-xs text-white/80">
-                          Instagram + TikTok creator placement
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </div>

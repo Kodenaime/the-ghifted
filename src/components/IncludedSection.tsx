@@ -38,6 +38,11 @@ export function IncludedSection() {
               <h3 className="mt-4 font-display text-[19px] leading-snug">
                 {item.title}
               </h3>
+              {item.price && (
+                <p className="mt-3 font-display text-[28px] font-medium leading-none text-pine">
+                  {item.price}
+                </p>
+              )}
               <p className="mt-3 text-sm text-muted">{item.body}</p>
             </Card>
           ))}

@@ -37,7 +37,7 @@ export const HERO = {
     "One video",
     "Instagram + TikTok posting",
     "3 months paid ad usage rights",
-    "Special holiday rate",
+    "₦100,000 special holiday rate",
   ],
   cta: "Join the Waitlist",
 }
@@ -118,7 +118,8 @@ export const INCLUDED = {
     {
       number: "04",
       title: "Special Holiday Rate",
-      body: "The entire package is available at a discounted rate created exclusively for this holiday campaign, revealed at launch.",
+      body: "The entire package is available at a discounted rate created exclusively for this holiday campaign.",
+      price: "₦100,000",
       highlight: true,
     },
   ],
@@ -259,6 +260,6 @@ export const WHY_JOIN = {
 export const FINAL_CTA = {
   title: "Ready to collaborate?",
   body: "Let's create something special this holiday season.",
-  note: "Limited slots are available at the special holiday rate.",
+  note: "Limited slots are available at the ₦100,000 special holiday rate.",
   cta: "Join the Waitlist",
 }
