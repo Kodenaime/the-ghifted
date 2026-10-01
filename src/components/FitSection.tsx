@@ -193,7 +193,7 @@ export function FitSection() {
         {/* Stacked Cards Frame (Responsive height for mobile viewports) */}
         <div
           ref={cardsContainerRef}
-          className="relative mx-auto grid h-140 sm:h-137.5 md:h-145 lg:h-[135] w-full max-w-5xl"
+          className="relative mx-auto grid h-155 sm:h-150 md:h-155 lg:h-135 w-full max-w-5xl"
         >
           {CATEGORIES.map((cat) => {
             const categoryItems =
@@ -258,7 +258,7 @@ export function FitSection() {
                   </div>
 
                   {/* Right Column / Mobile Top: Editorial Photography Showcase */}
-                  <div className="relative h-64 sm:h-56 md:h-64 lg:h-full order-1 lg:order-2 lg:col-span-5">
+                  <div className="relative h-64 sm:h-64 md:h-72 lg:h-96 order-1 lg:order-2 lg:col-span-5">
                     <div className="relative h-full w-full overflow-hidden rounded-[18px] sm:rounded-3xl shadow-lift">
                       <img
                         src={cat.imageSrc}
