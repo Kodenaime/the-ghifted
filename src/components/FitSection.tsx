@@ -251,7 +251,7 @@ export function FitSection() {
                         }}
                         className={`inline-flex cursor-pointer items-center gap-2 rounded-[12px] sm:rounded-[14px] px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold shadow-soft transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 ${cat.btnClass}`}
                       >
-                        Join the waitlist
+                        {FIT.cta}
                         <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       </button>
                     </div>

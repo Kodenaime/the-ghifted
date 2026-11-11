@@ -11,7 +11,7 @@ export function WhyJoin() {
   const { open } = useWaitlist()
 
   return (
-    <section className="section-pad" aria-label="Why join the waitlist?">
+    <section className="section-pad" aria-label={WHY_JOIN.eyebrow}>
       <div className="container-x">
         <SectionHeading title={WHY_JOIN.eyebrow} />
 

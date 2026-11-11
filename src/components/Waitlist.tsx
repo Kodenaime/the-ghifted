@@ -90,7 +90,7 @@ function WaitlistModal({
             ref={panelRef}
             role="dialog"
             aria-modal="true"
-            aria-label="Join the waitlist"
+            aria-label="Book your slot"
             tabIndex={-1}
             className="relative w-full max-w-lg overflow-hidden rounded-[20px] bg-white shadow-lift outline-none"
             initial={{ opacity: 0, y: 24, scale: 0.97 }}
@@ -104,7 +104,7 @@ function WaitlistModal({
                   Special Holiday Collaboration
                 </p>
                 <h2 className="mt-1 font-display text-2xl text-ink">
-                  Join the waitlist
+                  Book your slot
                 </h2>
               </div>
               <button
@@ -121,7 +121,7 @@ function WaitlistModal({
               {LINKS.googleForm ? (
                 <iframe
                   src={LINKS.googleForm}
-                  title="Holiday collaboration waitlist form"
+                  title="Holiday collaboration booking form"
                   className="h-[520px] w-full rounded-[12px] border border-ink/10 bg-ivory"
                   loading="lazy"
                 />
@@ -133,7 +133,7 @@ function WaitlistModal({
                     </svg>
                   </span>
                   <p className="font-display text-xl text-ink">
-                    The waitlist form is on its way.
+                    The booking form is on its way.
                   </p>
                   <p className="max-w-xs text-sm text-muted">
                     The Google Form link will be dropped in here once it's ready.

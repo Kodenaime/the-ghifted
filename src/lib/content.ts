@@ -39,7 +39,7 @@ export const HERO = {
     "3 months paid ad usage rights",
     "₦100,000 special holiday rate",
   ],
-  cta: "Join the Waitlist",
+  cta: "Book now",
 }
 
 export type FitCategory = {
@@ -94,6 +94,7 @@ export const FIT = {
     },
   ] as FitCategory[],
   linkLabel: "Check full campaign eligibility and terms",
+  cta: "Book now",
 }
 
 export const INCLUDED = {
@@ -123,7 +124,7 @@ export const INCLUDED = {
       highlight: true,
     },
   ],
-  cta: "Join the Waitlist",
+  cta: "Book now",
 }
 
 export const PAST_COLLABORATIONS = {
@@ -185,12 +186,12 @@ export const BOOKING = {
   eyebrow: "How booking works",
   steps: [
     {
-      title: "Join the waitlist",
-      body: "Add your brand's details. It takes two minutes and gets you on the list for early access.",
+      title: "Submit your booking details",
+      body: "Add your brand's details in the booking form. It takes two minutes to get started.",
     },
     {
       title: "Confirm eligibility",
-      body: "Not sure your brand fits? We confirm this together before you book, so there are no surprises.",
+      body: "Not sure your brand fits? We confirm this together before payment, so there are no surprises.",
     },
     {
       title: "Book your slot",
@@ -206,7 +207,7 @@ export const BOOKING = {
 export const KEY_DETAILS = {
   eyebrow: "A few things to know",
   items: [
-    "Slots are limited and first-booked, first-served. Joining the waitlist doesn't guarantee a slot, but it does guarantee early access before public booking opens.",
+    "Slots are limited and first-booked, first-served. Booking early is the best way to secure your spot while slots last.",
     "Full payment is required to secure your slot.",
     "Brand eligibility should be confirmed before booking as all payments are non-refundable.",
     "Each video gets up to two reasonable rounds of revision, not a new concept or a different video.",
@@ -237,29 +238,29 @@ export const FAQ = {
     },
     {
       q: "Can I book more than one video?",
-      a: "Yes! You can book more than one collaboration video, subject to slot availability. If you'd like multiple videos, simply secure multiple available slots when bookings open.",
+      a: "Yes! You can book more than one collaboration video, subject to slot availability. If you'd like multiple videos, simply secure multiple available slots when you book.",
     },
   ],
 }
 
 export const WHY_JOIN = {
-  eyebrow: "Why join the waitlist?",
+  eyebrow: "Why book now?",
   items: [
     {
-      title: "Know before anyone else",
-      body: "Campaign updates and booking info land in your inbox before this opens to the public.",
+      title: "Limited slots available",
+      body: "Slots are filled on a first-booked, first-served basis. Once all holiday spots are taken, booking closes.",
     },
     {
       title: "Lock in the rate while it lasts",
-      body: "Once the limited slots are gone, so is the ₦100,000 rate. Waitlist members get first access to book.",
+      body: "Once the limited slots are gone, so is the ₦100,000 rate. Book now to secure your collaboration.",
     },
   ],
-  cta: "Be the first in line",
+  cta: "Secure your slot",
 }
 
 export const FINAL_CTA = {
   title: "Ready to collaborate?",
   body: "Let's create something special this holiday season.",
   note: "Limited slots are available at the ₦100,000 special holiday rate.",
-  cta: "Join the Waitlist",
+  cta: "Book now",
 }
