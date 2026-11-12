@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------------
 
 export const LINKS = {
-  googleForm: "https://forms.gle/rAXpVnCta4iVyYSd6",
+  booking: "https://nestuge.com/special-holiday-collaboration",
   terms:
     "https://docs.google.com/document/d/1pg5yKx0CMQiTDz2IfpayBB4r_FKwMwkcNSS1LtdRJVI/edit?usp=sharing",
   portfolio: "https://theghifted.my.canva.site/portfolio-and-media-kit/",
@@ -186,12 +186,12 @@ export const BOOKING = {
   eyebrow: "How booking works",
   steps: [
     {
-      title: "Submit your booking details",
-      body: "Add your brand's details in the booking form. It takes two minutes to get started.",
+      title: "Confirm eligibility",
+      body: "Not sure your brand fits? Reach out before booking to confirm eligibility so there are no surprises.",
     },
     {
-      title: "Confirm eligibility",
-      body: "Not sure your brand fits? We confirm this together before payment, so there are no surprises.",
+      title: "Complete booking & payment",
+      body: "Head to the Nestuge campaign page, enter your brand details, and make payment directly online.",
     },
     {
       title: "Book your slot",

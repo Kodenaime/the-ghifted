@@ -3,11 +3,9 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 import { BRAND, HERO, LINKS, NAV_LINKS } from "../lib/content"
 import { trackCta } from "../lib/analytics"
 import { scrollToTarget } from "../lib/smoothScroll"
-import { useWaitlist } from "../lib/waitlist-context"
 import { CloseIcon, MenuIcon, SparkleIcon } from "./icons"
 
 export function Nav() {
-  const { open } = useWaitlist()
   const [hidden, setHidden] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -33,10 +31,9 @@ export function Nav() {
 
   const isHidden = reduced ? false : hidden
 
-  const openCta = () => {
+  const onCtaClick = () => {
     trackCta("nav")
     setMenuOpen(false)
-    open()
   }
 
   const linkClass = scrolled
@@ -95,9 +92,11 @@ export function Nav() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={openCta}
+            <a
+              href={LINKS.booking}
+              target="_blank"
+              rel="noreferrer"
+              onClick={onCtaClick}
               className={`hidden cursor-pointer items-center justify-center rounded-[12px] px-5 py-2.5 text-sm font-semibold transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 sm:inline-flex ${
                 scrolled
                   ? "bg-pine text-ivory hover:bg-forest"
@@ -105,7 +104,7 @@ export function Nav() {
               }`}
             >
               {HERO.cta}
-            </button>
+            </a>
             <button
               type="button"
               onClick={() => setMenuOpen((v) => !v)}
@@ -160,13 +159,15 @@ export function Nav() {
               >
                 Portfolio
               </a>
-              <button
-                type="button"
-                onClick={openCta}
+              <a
+                href={LINKS.booking}
+                target="_blank"
+                rel="noreferrer"
+                onClick={onCtaClick}
                 className="mt-2 inline-flex cursor-pointer items-center justify-center rounded-[12px] bg-pine px-5 py-3 text-base font-semibold text-ivory"
               >
                 {HERO.cta}
-              </button>
+              </a>
             </nav>
           </motion.div>
         )}

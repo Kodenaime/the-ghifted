@@ -2,7 +2,6 @@ import { useLayoutEffect, useRef, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { FIT, LINKS } from "../lib/content"
-import { useWaitlist } from "../lib/waitlist-context"
 import { trackCta } from "../lib/analytics"
 import { ArrowRight, SparkleIcon } from "./icons"
 
@@ -68,7 +67,6 @@ const CATEGORIES: CategoryConfig[] = [
 ]
 
 export function FitSection() {
-  const { open } = useWaitlist()
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0)
   const pinSectionRef = useRef<HTMLDivElement>(null)
   const cardsContainerRef = useRef<HTMLDivElement>(null)
@@ -243,17 +241,16 @@ export function FitSection() {
 
                     {/* CTA Button */}
                     <div className="mt-4 sm:mt-6 pt-1">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          trackCta(`fit-${cat.name.toLowerCase()}`)
-                          open()
-                        }}
+                      <a
+                        href={LINKS.booking}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => trackCta(`fit-${cat.name.toLowerCase()}`)}
                         className={`inline-flex cursor-pointer items-center gap-2 rounded-[12px] sm:rounded-[14px] px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-sm font-semibold shadow-soft transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 ${cat.btnClass}`}
                       >
                         {FIT.cta}
                         <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                      </button>
+                      </a>
                     </div>
                   </div>
 

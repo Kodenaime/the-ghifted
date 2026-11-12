@@ -1,14 +1,12 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
-import { FINAL_CTA } from "../lib/content"
+import { FINAL_CTA, LINKS } from "../lib/content"
 import { StarField } from "./StarField"
 import { TextReveal } from "./TextReveal"
 import { Magnetic } from "./Magnetic"
-import { useWaitlist } from "../lib/waitlist-context"
 import { trackCta } from "../lib/analytics"
 import { ArrowRight } from "./icons"
 
 export function FinalCta() {
-  const { open } = useWaitlist()
   const { scrollY } = useScroll()
   const reduced = useReducedMotion()
   const yStars = useTransform(scrollY, [0, 500], [0, -60])
@@ -44,17 +42,16 @@ export function FinalCta() {
 
         <div className="mt-9 flex justify-center">
           <Magnetic>
-            <button
-              type="button"
-              onClick={() => {
-                trackCta("final-cta")
-                open()
-              }}
+            <a
+              href={LINKS.booking}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackCta("final-cta")}
               className="group inline-flex cursor-pointer items-center gap-2 rounded-[12px] bg-gold px-8 py-4 text-base font-semibold text-forest transition-colors duration-200 hover:bg-champagne"
             >
               {FINAL_CTA.cta}
               <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-0.5" />
-            </button>
+            </a>
           </Magnetic>
         </div>
       </div>

@@ -1,14 +1,11 @@
-import { INCLUDED } from "../lib/content"
+import { INCLUDED, LINKS } from "../lib/content"
 import { Button } from "./Button"
 import { Card } from "./Card"
 import { Reveal } from "./Reveal"
 import { SectionHeading } from "./SectionHeading"
-import { useWaitlist } from "../lib/waitlist-context"
 import { trackCta } from "../lib/analytics"
 
 export function IncludedSection() {
-  const { open } = useWaitlist()
-
   return (
     <section
       id="included"
@@ -50,10 +47,10 @@ export function IncludedSection() {
 
         <Reveal className="mt-12 text-center">
           <Button
-            onClick={() => {
-              trackCta("included")
-              open()
-            }}
+            href={LINKS.booking}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => trackCta("included")}
           >
             {INCLUDED.cta}
           </Button>

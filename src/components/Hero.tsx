@@ -1,12 +1,10 @@
 import { motion, useReducedMotion } from "framer-motion"
-import { HERO } from "../lib/content"
+import { HERO, LINKS } from "../lib/content"
 import { ArrowRight, SparkleIcon } from "./icons"
 import { Magnetic } from "./Magnetic"
-import { useWaitlist } from "../lib/waitlist-context"
 import { trackCta } from "../lib/analytics"
 
 export function Hero() {
-  const { open } = useWaitlist()
   const reduced = useReducedMotion()
 
   const titleLetters = Array.from(HERO.title)
@@ -104,17 +102,16 @@ export function Hero() {
             className="mt-9"
           >
             <Magnetic>
-              <button
-                type="button"
-                onClick={() => {
-                  trackCta("hero")
-                  open()
-                }}
+              <a
+                href={LINKS.booking}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() => trackCta("hero")}
                 className="group inline-flex cursor-pointer items-center gap-3 rounded-[14px] bg-gold px-8 py-4 text-base font-semibold text-forest shadow-lift transition-colors duration-300 hover:bg-champagne"
               >
                 {HERO.cta}
                 <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+              </a>
             </Magnetic>
           </motion.div>
         </div>

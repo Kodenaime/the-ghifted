@@ -10,7 +10,6 @@ import { LogoMarquee } from "./components/LogoMarquee"
 import { Nav } from "./components/Nav"
 import { PastCollaborations } from "./components/PastCollaborations"
 import { SmoothScroll } from "./components/SmoothScroll"
-import { WaitlistProvider } from "./components/Waitlist"
 import { WhyJoin } from "./components/WhyJoin"
 import { CustomCursor } from "./components/CustomCursor"
 
@@ -19,27 +18,25 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <CustomCursor />
       <SmoothScroll />
-      <WaitlistProvider>
-        <Nav />
-        <main>
-          <div data-cursor-theme="dark">
-            <Hero />
-          </div>
-          <div data-cursor-theme="light">
-            <FitSection />
-            <IncludedSection />
-            <PastCollaborations />
-            <LogoMarquee />
-            <BookingSteps />
-            <KeyDetails />
-            <Faq />
-            <WhyJoin />
-          </div>
-        </main>
+      <Nav />
+      <main>
         <div data-cursor-theme="dark">
-          <Footer />
+          <Hero />
         </div>
-      </WaitlistProvider>
+        <div data-cursor-theme="light">
+          <FitSection />
+          <IncludedSection />
+          <PastCollaborations />
+          <LogoMarquee />
+          <BookingSteps />
+          <KeyDetails />
+          <Faq />
+          <WhyJoin />
+        </div>
+      </main>
+      <div data-cursor-theme="dark">
+        <Footer />
+      </div>
     </MotionConfig>
   )
 }

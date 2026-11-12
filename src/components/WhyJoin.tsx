@@ -1,15 +1,12 @@
-import { WHY_JOIN } from "../lib/content"
+import { LINKS, WHY_JOIN } from "../lib/content"
 import { Button } from "./Button"
 import { Card } from "./Card"
 import { Reveal } from "./Reveal"
 import { SectionHeading } from "./SectionHeading"
-import { useWaitlist } from "../lib/waitlist-context"
 import { trackCta } from "../lib/analytics"
 import { SparkleIcon } from "./icons"
 
 export function WhyJoin() {
-  const { open } = useWaitlist()
-
   return (
     <section className="section-pad" aria-label={WHY_JOIN.eyebrow}>
       <div className="container-x">
@@ -30,10 +27,10 @@ export function WhyJoin() {
         <Reveal className="mt-12 text-center">
           <Button
             size="lg"
-            onClick={() => {
-              trackCta("why-join")
-              open()
-            }}
+            href={LINKS.booking}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => trackCta("why-join")}
           >
             {WHY_JOIN.cta}
           </Button>

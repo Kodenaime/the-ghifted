@@ -1,13 +1,22 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react"
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode,
+} from "react"
 import { Magnetic } from "./Magnetic"
 
 type Variant = "primary" | "gold" | "ghost"
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type CommonProps = {
   variant?: Variant
   size?: "md" | "lg"
+  className?: string
   children: ReactNode
 }
+
+type ButtonProps =
+  | (CommonProps & { href?: undefined } & ButtonHTMLAttributes<HTMLButtonElement>)
+  | (CommonProps & { href: string } & AnchorHTMLAttributes<HTMLAnchorElement>)
 
 const variants: Record<Variant, string> = {
   primary:
@@ -29,15 +38,23 @@ export function Button({
   children,
   ...rest
 }: ButtonProps) {
+  const classes = `inline-flex cursor-pointer items-center justify-center gap-2 rounded-[12px] font-semibold transition-colors duration-200 active:scale-[0.98] ${variants[variant]} ${sizes[size]} ${className}`
+
   return (
     <Magnetic>
-      <button
-        type="button"
-        className={`inline-flex cursor-pointer items-center justify-center gap-2 rounded-[12px] font-semibold transition-colors duration-200 active:scale-[0.98] ${variants[variant]} ${sizes[size]} ${className}`}
-        {...rest}
-      >
-        {children}
-      </button>
+      {"href" in rest && rest.href !== undefined ? (
+        <a className={classes} {...rest}>
+          {children}
+        </a>
+      ) : (
+        <button
+          type="button"
+          className={classes}
+          {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}
+        >
+          {children}
+        </button>
+      )}
     </Magnetic>
   )
 }
